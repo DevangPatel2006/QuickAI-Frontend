@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Markdown from "react-markdown";
 const CreationItem = ({ item }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -36,7 +36,10 @@ const CreationItem = ({ item }) => {
             />
           ) : (
             <div className="h-full overflow-y-auto text-sm text-slate-700 whitespace-pre-wrap">
-              {item.content}
+              <div className="reset-tw">
+                {" "}
+                <Markdown>{item.content}</Markdown>
+              </div>
             </div>
           )}
         </div>
